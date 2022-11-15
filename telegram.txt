@@ -1,0 +1,16 @@
+import telebot
+token = '5555440626:AAEZyT5TqIxcc6nAN3_C7X1dV-ausJnPF7Q'
+her = telebot.TeleBot(token)
+
+@her.message_handler(commands=['start'])
+def welcome(message):
+    her.send_message(message.chat.id, "hello world!")
+
+@her.message_handler(content_types=['text'])
+def lalala(message):
+    her.send_message(message.chat.id, 'chtoto')
+
+her.polling(none_stop=True)
+
+
+
